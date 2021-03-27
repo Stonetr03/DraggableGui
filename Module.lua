@@ -1,5 +1,7 @@
 -- Stonetr03 Studios
 
+-- Original Module made by Spynaz https://devforum.roblox.com/t/simple-module-for-creating-draggable-gui-elements/230678
+
 local Module = {}
 
 local Events = {}
