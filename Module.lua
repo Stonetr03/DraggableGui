@@ -19,7 +19,9 @@ function Module:SetDrag(gui,Value)
 		local function update(input)
 			local delta = input.Position - dragStart
 			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-
+			
+			-- Updates Gui Position - Connect Update Event Here --
+			
 		end
 
 		local IBconnection
@@ -33,9 +35,14 @@ function Module:SetDrag(gui,Value)
 				input.Changed:Connect(function()
 					if input.UserInputState == Enum.UserInputState.End then
 						dragging = false
+						
+						-- Stop Drag - Connect Stop Event Here - Sometimes calls more than once --
+						
 					end
 				end)
-
+				
+				-- Start Drag - Connect Start Event Here -- 
+				
 			end
 		end)
 
